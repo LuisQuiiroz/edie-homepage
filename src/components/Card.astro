@@ -1,0 +1,27 @@
+---
+interface Props {
+  icon: "edit" | "code" | "storage";
+  colorIcon: "bg-blue-1" | "bg-green-1" | "bg-red-1";
+  title: string;
+  text: string;
+  buttonText: string;
+}
+
+const { icon, colorIcon, title, text, buttonText } = Astro.props;
+---
+
+<div class="px-9 py-11 rounded-3xl shadow-xl">
+  <img
+    class={`p-4 rounded-2xl ${colorIcon}`}
+    src={`/icons/${icon}.svg`}
+    alt="code icon"
+  />
+  <p class="text-gray-1 text-2xl font-bold mt-9 mb-6">{title}</p>
+  <p class="text-gray-2 text-base font-normal">
+    {text}
+  </p>
+  <button
+    class="text-white text-base font-medium mt-7 bg-blue-1 py-2 px-3 rounded-xl"
+    >{buttonText}</button
+  >
+</div>
