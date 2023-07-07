@@ -1,3 +1,35 @@
-<div id="our-works">
-  <p>our-works</p>
+---
+import CardWork from "./CardWork.astro";
+---
+
+<div id="our-works" class="py-8">
+  <p class="text-gray-1 text-2xl font-medium p-8">
+    Good design means good business
+  </p>
+  <div class="grid gap-6 grid-cols-1">
+    <CardWork
+      img="/imgs/products/smarthome.jpg"
+      title="Smart home dashboard"
+      subtitle="Full stack application"
+    />
+    <CardWork
+      img="/imgs/products/onboard.png"
+      title="Onboard application"
+      subtitle="UX/UI design"
+    />
+    <CardWork
+      img="/imgs/products/booking.png"
+      title="Booking system"
+      subtitle="Mobile application"
+    />
+    <CardWork
+      img="/imgs/products/juice-product.png"
+      title="Juice product homepage"
+      subtitle="Front End applicati on"
+    />
+  </div>
+  <div class="flex center items-center my-9 gap-3">
+    <p class="text-blue-1 text-lg font-medium">see more</p>
+    <img src="/icons/arrow.svg" alt="arrow icon" />
+  </div>
 </div>

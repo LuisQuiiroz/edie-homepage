@@ -1,0 +1,16 @@
+---
+interface Props {
+  img: string;
+  title: string;
+  subtitle: string;
+}
+const { img, title, subtitle } = Astro.props;
+---
+
+<div>
+  <img class="rounded-3xl w-full my-4" src={img} alt="image work" />
+  <div class="px-2">
+    <p class="text-gray-3 text-xs font-light">{subtitle}</p>
+    <p class="text-gray-1 text-lg font-medium">{title}</p>
+  </div>
+</div>
