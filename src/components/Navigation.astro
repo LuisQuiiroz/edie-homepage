@@ -1,0 +1,21 @@
+---
+interface Props {
+  type?: "flex" | "block" | "center";
+}
+
+const { type = "block" } = Astro.props;
+
+const display = {
+  flex: "flex gap-8",
+  block: "grid grid-cols-1 gap-2",
+  center: "grid grid-cols-1 gap-8 text-center",
+};
+---
+
+<ul id="menu" class={`${display[type]}`}>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#our-works">Our Works</a></li>
+  <li><a href="#clients">Clients</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>

@@ -1,20 +1,42 @@
-<header>
-  <nav>
-    <h3>Edie</h3>
-    <ul id="menu" class="hidden">
-      <li><a href="#home"></a>Home</li>
-      <li><a href="#services"></a>Services</li>
-      <li><a href="#our-works"></a>Our Works</li>
-      <li><a href="#clients"></a>Clients</li>
-      <li><a href="#contact"></a>Contact</li>
-      <!-- <button class="menu-icon-x" onclick="toggleMenu()">
-          <img src="./public/x.svg" alt="menu">
-        </button> -->
-    </ul>
-    <button onclick="
-    toggleMenu()
-    ">
-      <img src="./icons/menu.svg" alt="menu" />
+---
+import Navigation from "./Navigation.astro";
+---
+
+<header class="p-3 md:px-16 md:py-8">
+  <nav class="flex items-center justify-between">
+    <p class="text-gray-1 text-2xl font-extrabold">Edie</p>
+    <div class="hidden md:flex" id="menu">
+      <Navigation type="flex" />
+    </div>
+    <button class="md:hidden" id="menu-icon">
+      <img src="./icons/menu.svg" alt="menu icon" />
     </button>
+    <div
+      class="hidden fixed top-0 left-0 w-full h-full bg-blue-2 text-white items-center justify-center"
+      id="mobile-menu"
+    >
+      <Navigation type="center" />
+      <button class="fixed top-0 right-0 px-3 py-4" id="close-icon">
+        <img src="./icons/close.svg" alt="close icon" />
+      </button>
+    </div>
   </nav>
 </header>
+<script>
+  const menu = document.querySelector("#menu-icon");
+  const close = document.querySelector("#close-icon");
+
+  const toggleMenu = () => {
+    const mobileMenu = document.querySelector("#mobile-menu");
+    mobileMenu?.classList.toggle("hidden");
+    mobileMenu?.classList.toggle("flex");
+  };
+
+  menu?.addEventListener("click", () => {
+    toggleMenu();
+  });
+
+  close?.addEventListener("click", () => {
+    toggleMenu();
+  });
+</script>

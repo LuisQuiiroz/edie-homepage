@@ -1,1 +1,32 @@
-<p>Footer</p>
+---
+import Contact from "./Contact.astro";
+import Navigation from "./Navigation.astro";
+---
+
+<div class="bg-blue-2 p-10 pb-6">
+  <div class="text-white text-lg font-normal mb-16">
+    <Navigation />
+  </div>
+  <div class="mb-16">
+    <p class="text-gray-6 text-4xl font-extrabold mb-4">Edie</p>
+    <div class="flex gap-3">
+      <a href="#">
+        <img src="/icons/instagram.svg" alt="instagram icon" />
+      </a>
+      <a href="#">
+        <img src="/icons/linkedin.svg" alt="linkedin icon" />
+      </a>
+      <a href="#">
+        <img src="/icons/twitter.svg" alt="twitter icon" />
+      </a>
+    </div>
+  </div>
+  <div class="mb-40" id="contact">
+    <Contact />
+  </div>
+  <div>
+    <p class="text-gray-6 text-sm">
+      created by <span class="font-bold">Quiiroz</span> - devChallenges.io
+    </p>
+  </div>
+</div>
